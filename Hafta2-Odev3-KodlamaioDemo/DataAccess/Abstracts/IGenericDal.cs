@@ -8,6 +8,7 @@ namespace DataAccess.Abstracts
 {
     public interface IGenericDal<T> where T : class
     {
+        T GetById(int id);
         IQueryable<T> GetAll();
         Task AddAsync(T entity);
         void Update(T entity);

@@ -46,6 +46,10 @@ namespace DataAccess.Concrete
                 _items[index] = entity;
             }
         }
+        public T GetById(int id)
+        {
+            return _items.FirstOrDefault(item => GetId(item) == id);
+        }
         private int GetId(T entity)
         {
             // T'nin Id özelliğinin ismi ve tipi belirli değilse burada uygun şekilde özelliğe erişmeliyiz.
@@ -53,5 +57,6 @@ namespace DataAccess.Concrete
             // Bu örnekte varsayılan olarak bir Id özelliği olduğunu varsayıyoruz.
             return (int)entity.GetType().GetProperty("Id").GetValue(entity);
         }
+
     }
 }

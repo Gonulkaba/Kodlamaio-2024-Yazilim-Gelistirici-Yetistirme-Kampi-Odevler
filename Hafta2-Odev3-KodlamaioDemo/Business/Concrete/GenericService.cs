@@ -40,5 +40,9 @@ namespace Business.Concrete
             await Task.CompletedTask;
         }
 
+        public T GetById(int id)
+        {
+            return  _genericDal.GetById(id);
+        }
     }
 }

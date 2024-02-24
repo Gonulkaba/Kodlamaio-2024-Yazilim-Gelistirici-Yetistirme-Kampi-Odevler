@@ -9,6 +9,7 @@ namespace Business.Abstracts
 {
     public interface IGenericService<T> where T : class
     {
+        T GetById(int id);
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> AddAsync(T entity);
         Task UpdateAsync(T entity);
